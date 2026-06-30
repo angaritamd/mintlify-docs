@@ -11,24 +11,65 @@
   "navigation": {
     "pages": [
       {
-        "group": "Getting Started",
+        "group": "Primeros pasos",
         "pages": [
           "index",
-          "quickstart"
+          "primeros-pasos/crear-cuenta",
+          "primeros-pasos/reclamar-departamento",
+          "primeros-pasos/unirte-a-un-equipo"
+        ]
+      },
+      {
+        "group": "Para coordinadores",
+        "pages": [
+          "coordinadores/configurar-equipo",
+          "coordinadores/generar-calendario",
+          "coordinadores/aprobar-permutas",
+          "coordinadores/gestionar-vacaciones",
+          "coordinadores/dashboard-bienestar",
+          "coordinadores/exportar-reportes"
+        ]
+      },
+      {
+        "group": "Para especialistas",
+        "pages": [
+          "especialistas/ver-calendario",
+          "especialistas/solicitar-cambio-turno",
+          "especialistas/solicitar-vacaciones",
+          "especialistas/notificaciones-whatsapp",
+          "especialistas/sincronizar-calendario"
+        ]
+      },
+      {
+        "group": "Agentes de IA",
+        "pages": [
+          "agentes/agente-rotador",
+          "agentes/agente-cobertura",
+          "agentes/agente-bienestar",
+          "agentes/agente-permuta",
+          "agentes/agente-consulta"
+        ]
+      },
+      {
+        "group": "Preguntas frecuentes",
+        "pages": [
+          "faq/facturacion-planes",
+          "faq/seguridad-privacidad",
+          "faq/soporte"
         ]
       }
     ],
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "Sitio principal",
+          "href": "https://clicrad.com",
+          "icon": "globe"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Abrir ClicRad",
+          "href": "https://app.clicrad.com",
+          "icon": "arrow-up-right-from-square"
         }
       ]
     }
@@ -40,33 +81,22 @@
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "label": "Soporte",
+        "href": "mailto:emails@clicrad.com"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://app.mintlify.com"
+      "label": "Abrir ClicRad",
+      "href": "https://app.clicrad.com"
     }
   },
   "contextual": {
-    "options": [
-      "copy",
-      "view",
-      "chatgpt",
-      "claude",
-      "perplexity",
-      "mcp",
-      "cursor",
-      "vscode"
-    ]
+    "options": ["copy", "view", "chatgpt", "claude"]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "linkedin": "https://www.linkedin.com/company/angaritarad"
     }
   }
 }
