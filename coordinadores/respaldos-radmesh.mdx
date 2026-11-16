@@ -1,0 +1,79 @@
+---
+title: "Respaldos y capacidad para RadMesh"
+description: "Di quién respalda cada servicio y cuántos estudios lee cada radiólogo, para que RadMesh no deje estudios sin leer"
+---
+
+Si tu hospital usa RadMesh, ClicRad le dice quién está de turno. Con esta configuración también le dices **quién respalda cada servicio** y **cuántos estudios por hora lee cada radiólogo**.
+
+RadMesh usa estos datos cuando un estudio está por vencer sin que nadie lo haya abierto. Entonces sugiere a quién pasárselo, empezando por el respaldo de ese momento, y arma una bolsa con el estudio que vence y otros de la misma modalidad, según la capacidad. **RadMesh solo sugiere: una persona del hospital asigna o descarta.**
+
+<Info>
+  ClicRad solo comparte quién está de turno o de respaldo, en qué servicio y con qué capacidad. Nunca recibe ni envía datos de pacientes, y nada de RadMesh vuelve a ClicRad.
+</Info>
+
+## Antes de empezar
+
+- Necesitas el rol de **admin del hospital**. Los demás usuarios no ven esta pantalla.
+- Tu hospital ya debe tener la integración con RadMesh: una llave creada en **Ajustes** › **Integración RadMesh**.
+- Solo aparecen los radiólogos con membresía activa en el hospital. Si falta alguien, agrégalo primero al hospital.
+
+Todo se hace en [app.clicrad.com](https://app.clicrad.com) › **Ajustes** › **Integración RadMesh**.
+
+<Steps>
+  <Step title="Enciende los permisos de la llave">
+    En la llave de tu hospital, activa **Compartir roles de lectura** (respaldos) y **Compartir capacidad**.
+
+    Vienen apagados. Mientras lo estén, RadMesh recibe solo los turnos, igual que antes. Puedes encender solo uno.
+  </Step>
+  <Step title="Elige el respaldo fijo de cada servicio">
+    En **Respaldo fijo por servicio**, elige para cada servicio al **Respaldo 1** y, si quieres, al **Respaldo 2**.
+
+    Es el respaldo de siempre: vale cualquier día en que no hayas programado a nadie. Se guarda al elegir. Para quitarlo, elige **Sin respaldo**.
+  </Step>
+  <Step title="Programa respaldos para días concretos (opcional)">
+    En **Respaldos programados**, llena **Fecha**, **Franja**, **Servicio**, **Nivel** y el radiólogo, y pulsa **Programar respaldo**.
+
+    Úsalo para un festivo, un fin de semana o una noche en que el fijo no está. Si existe uno para ese momento, RadMesh lo prefiere sobre el fijo.
+  </Step>
+  <Step title="Declara la capacidad de lectura">
+    En **Capacidad de lectura**, escribe cuántos estudios por hora suele leer cada radiólogo en cada modalidad (de 1 a 60). Se guarda al salir de la casilla. Vacío o 0 significa sin dato.
+
+    Por ejemplo, con **CT 4** la sugerencia trae el TAC que vence y hasta 3 TAC más. Sin dato, trae solo el que vence.
+  </Step>
+</Steps>
+
+## Franjas de los respaldos programados
+
+| Franja | Cuándo vale |
+| --- | --- |
+| Mañana | El horario de mañana del servicio |
+| Tarde | El horario de tarde del servicio |
+| Día completo | Todo el horario del servicio |
+| Noche | La noche. Con **Noche del hospital** cubre todos los servicios |
+
+No puedes programar a alguien que tiene una ausencia aprobada ese día.
+
+<Note>
+  Un respaldo no es un turno: no aparece en la planilla ni suma en la nómina.
+</Note>
+
+## Preguntas frecuentes
+
+<AccordionGroup>
+  <Accordion title="¿RadMesh asigna estudios por su cuenta?">
+    No. RadMesh solo sugiere a quién pasar el estudio. Asignar o descartar es siempre decisión de una persona del hospital.
+  </Accordion>
+  <Accordion title="¿Qué pasa si el respaldo está ausente?">
+    Si la ausencia está aprobada en ClicRad, RadMesh la tiene en cuenta y sugiere al siguiente: el respaldo 2 u otro radiólogo de turno.
+  </Accordion>
+  <Accordion title="¿La capacidad se mide automáticamente?">
+    No. Es un valor que declaras tú, según lo que suele leer cada radiólogo. Puedes cambiarlo cuando quieras.
+  </Accordion>
+  <Accordion title="¿Si apago un permiso se borra lo que ya recibió RadMesh?">
+    No. RadMesh conserva lo último que recibió. Para que deje de usarlo, quita los respaldos o la capacidad en esta misma pantalla antes de apagar el permiso.
+  </Accordion>
+</AccordionGroup>
+
+<Card title="También te puede servir" icon="arrow-right" href="/especialistas/sincronizar-calendario">
+  Sincroniza los turnos con tu calendario personal
+</Card>
