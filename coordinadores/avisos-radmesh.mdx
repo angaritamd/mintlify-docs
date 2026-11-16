@@ -1,0 +1,59 @@
+---
+title: "Avisos de RadMesh"
+description: "Decide quién recibe por WhatsApp y Slack los avisos de RadMesh en cada sede"
+---
+
+Si tu hospital usa RadMesh, este te avisa cuando hay algo pendiente. Por ejemplo: un estudio que va a vencer sin que nadie lo haya abierto, o una lectura prioritaria que te asignaron. Aquí decides **a quién le llega cada aviso**.
+
+<Info>
+  Los avisos nunca llevan datos de pacientes. Solo dicen que hay algo pendiente y traen un enlace que pide iniciar sesión en RadMesh.
+</Info>
+
+## Antes de empezar
+
+- Necesitas el rol de **admin del hospital**.
+- Cada persona que deba recibir WhatsApp necesita su teléfono en su perfil de ClicRad, en formato internacional (+57…).
+- Para Slack necesitas el **ID del canal**: en Slack, abre el canal, haz clic en su nombre y copia el ID que aparece al final (empieza por `C`).
+
+<Steps>
+  <Step title="Abre la pantalla de avisos">
+    Ve a [app.clicrad.com](https://app.clicrad.com) › **Ajustes** › **Integración RadMesh** y baja hasta **Avisos de RadMesh (WhatsApp y Slack)**.
+  </Step>
+  <Step title="Revisa la sede">
+    Aparece la sede `principal`. Si tu RadMesh usa otra sede o tienes varias, agrégalas con **Otra sede**. El nombre debe ser igual al de RadMesh.
+  </Step>
+  <Step title="Elige quién recibe cada tipo de aviso">
+    Para cada rol, escribe el ID del canal de Slack (opcional), marca las personas que reciben el WhatsApp y pulsa **Guardar**.
+
+    | Rol | Qué recibe |
+    | --- | --- |
+    | Admin | Las sugerencias de reasignación: un estudio por vencer necesita otro radiólogo |
+    | Radiólogos | Lecturas prioritarias asignadas, revisiones pendientes y hallazgos críticos |
+    | Tecnólogos | Órdenes faltantes y avisos para el personal técnico |
+  </Step>
+  <Step title="Crea la llave para los avisos">
+    En **Llave para n8n**, pulsa **Crear llave** y entrégala a quien administra tus avisos (el equipo de RadMesh). Se muestra una sola vez. Es distinta de la llave del nodo de RadMesh.
+  </Step>
+</Steps>
+
+<Note>
+  Una persona marcada **sin teléfono** solo recibe por Slack. Agrega su número en su perfil para que también le llegue el WhatsApp.
+</Note>
+
+## Preguntas frecuentes
+
+<AccordionGroup>
+  <Accordion title="¿RadMesh guarda los teléfonos?">
+    No. Los teléfonos se quedan en ClicRad. El sistema de avisos los consulta aquí solo para enviar el mensaje, y RadMesh nunca los recibe.
+  </Accordion>
+  <Accordion title="¿Qué pasa si alguien cambia de número?">
+    Basta con actualizarlo en su perfil. El siguiente aviso ya sale al número nuevo.
+  </Accordion>
+  <Accordion title="¿Puedo dejar de recibir avisos de un rol?">
+    Sí. Desmarca a todas las personas, borra el canal de Slack y pulsa **Guardar**: ese destino se quita.
+  </Accordion>
+</AccordionGroup>
+
+<Card title="También te puede servir" icon="arrow-right" href="/coordinadores/respaldos-radmesh">
+  Respaldos y capacidad para RadMesh
+</Card>
