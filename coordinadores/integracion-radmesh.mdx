@@ -1,0 +1,79 @@
+---
+title: "Conectar ClicRad con RadMesh"
+sidebarTitle: "Integración con RadMesh"
+description: "Crea la llave de tu hospital para que RadMesh sepa quién está de turno en cada servicio"
+keywords: ["RadMesh", "integración", "llave", "sincronización", "turnos", "feed"]
+---
+
+Si tu hospital lee estudios en RadMesh, puedes conectarlo con ClicRad para que RadMesh sepa **quién está de turno en cada servicio**. RadMesh usa esos turnos para asignar la segunda lectura a quien está de turno, avisar por servicio de los estudios pendientes, armar sus estadísticas y enviar avisos por Slack o WhatsApp.
+
+<Info>
+  Los datos solo van de ClicRad a RadMesh. ClicRad nunca recibe nada de RadMesh ni datos de pacientes.
+</Info>
+
+## Qué recibe RadMesh
+
+- Los turnos asignados de tu equipo, con su servicio y su horario. Los turnos cancelados o sin asignar no se envían.
+- Los fines de semana confirmados.
+- Las ausencias aprobadas, solo como **Ausencia**. El motivo nunca sale de ClicRad.
+- El teléfono de cada radiólogo, **solo si activas** la opción de compartir contacto (ver abajo).
+
+## Antes de empezar
+
+- Necesitas el rol de **admin del hospital**.
+- Quien administra RadMesh en tu hospital debe estar listo para recibir los datos de conexión.
+
+## Crear la llave del hospital
+
+<Steps>
+  <Step title="Abre la integración">
+    En [app.clicrad.com](https://app.clicrad.com), entra a **Ajustes** › **Integración RadMesh**.
+  </Step>
+  <Step title="Crea una llave">
+    Pulsa **Crear llave**. La llave se muestra **una sola vez**: cópiala en ese momento. ClicRad no la guarda en texto, así que después no se puede volver a ver.
+  </Step>
+  <Step title="Entrega los datos a RadMesh">
+    En la misma pantalla aparecen la **URL** y el **host** de la integración. Entrega la URL, el host y la llave a quien administra RadMesh, por un canal seguro.
+  </Step>
+  <Step title="RadMesh une a las personas">
+    En RadMesh, el admin une a cada persona de ClicRad con su usuario y cada servicio con su sección. Esa unión siempre la confirma una persona: RadMesh nunca la hace solo por el nombre.
+  </Step>
+</Steps>
+
+Desde ese momento RadMesh consulta ClicRad cada cierto tiempo y actualiza los turnos solo. Los cambios que hagas en la planilla le llegan en la siguiente consulta.
+
+## Compartir el contacto para avisos
+
+Si quieres que los avisos de RadMesh lleguen al WhatsApp de cada radiólogo, activa **compartir contacto para avisos** en la llave. Viene apagado: mientras lo esté, RadMesh no recibe ningún teléfono.
+
+Aunque lo actives, en RadMesh el admin tiene que confirmar, persona por persona, que ese número se usa para avisos.
+
+## Revocar una llave
+
+En **Ajustes** › **Integración RadMesh** ves las llaves de tu hospital y puedes revocar cualquiera. Una llave revocada deja de funcionar y RadMesh ya no recibe actualizaciones con ella.
+
+Si perdiste la llave o crees que alguien más la tiene, crea una nueva, entrégala a RadMesh y revoca la anterior.
+
+## Preguntas frecuentes
+
+<AccordionGroup>
+  <Accordion title="¿ClicRad recibe algo de RadMesh?">
+    No. La conexión va en una sola dirección: RadMesh descarga los turnos de ClicRad y nada vuelve.
+  </Accordion>
+
+  <Accordion title="¿RadMesh ve el motivo de una ausencia?">
+    No. RadMesh solo sabe que la persona está ausente ese día.
+  </Accordion>
+
+  <Accordion title="¿Qué pasa si un cambio borra muchos turnos de una persona?">
+    RadMesh no lo aplica de inmediato. Lo deja en espera hasta que su admin lo revise y lo apruebe.
+  </Accordion>
+
+  <Accordion title="¿Hay otra forma de cargar los turnos sin crear una llave?">
+    Sí. El admin de RadMesh puede subir a mano el archivo de calendario que exporta ClicRad. En ese caso los turnos no se actualizan solos: hay que volver a subir el archivo cada vez que cambien.
+  </Accordion>
+</AccordionGroup>
+
+<Card title="Siguiente paso: respaldos y capacidad" icon="arrow-right" href="/coordinadores/respaldos-radmesh">
+  Indica quién respalda cada servicio y cuántos estudios lee cada radiólogo
+</Card>

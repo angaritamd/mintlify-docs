@@ -27,6 +27,7 @@
           "coordinadores/aprobar-permutas",
           "coordinadores/gestionar-vacaciones",
           "coordinadores/dashboard-bienestar",
+          "coordinadores/integracion-radmesh",
           "coordinadores/exportar-reportes",
           "coordinadores/respaldos-radmesh"
         ]
