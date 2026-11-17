@@ -29,7 +29,8 @@
           "coordinadores/dashboard-bienestar",
           "coordinadores/integracion-radmesh",
           "coordinadores/exportar-reportes",
-          "coordinadores/respaldos-radmesh"
+          "coordinadores/respaldos-radmesh",
+          "coordinadores/avisos-radmesh"
         ]
       },
       {
